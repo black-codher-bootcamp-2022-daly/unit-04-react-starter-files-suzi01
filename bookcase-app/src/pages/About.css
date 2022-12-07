@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-align: center;  
+    padding: 10px;
+    margin:auto;
+    width: 70%;
+    border: solid 2px blue;
+
+}
+
+h2 {
+    margin: auto;
+    padding-bottom: 10px; 
+}
+
+li {
+    display: inline-block;
+    padding:10px;
+    background:greenyellow;
+    text-align: center;
+    margin-left:5px;
+}
+
+ul{
+    /* display: inline; */
+    list-style-type: none;
+    /* margin: 0; */
+    padding: 0;
+}
