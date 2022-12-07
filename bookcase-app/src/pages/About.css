@@ -12,7 +12,8 @@
 
 h2 {
     margin: auto;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
+    text-align: center; 
 }
 
 li {
@@ -28,4 +29,6 @@ ul{
     list-style-type: none;
     /* margin: 0; */
     padding: 0;
+    text-align: center;
+    /* margin:auto; */
 }

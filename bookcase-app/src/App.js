@@ -32,6 +32,7 @@ import Search from './components/Search';
 // export default App;
 
 function App() {
+  const [books, setBooks] = useState(data)
 
   function addBook(title){
     // console.log('hello')
@@ -39,24 +40,32 @@ function App() {
   }
 
   // const books = data
+
+ async function findBooks(value){
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${value}}&filter=paid-ebooks&print-type=books&projection=lite`
+
+  
+  const results = await fetch(url).then(res => res.json());
+  console.log(results)
+  if(!results.error){
+    setBooks(results.items)
+  }
+  }
   
 
 
   function Home() {
-    const [books] = useState(data);
     const [keyword, setKeyword] = useState("")
-    // console.log("This", books)
     return <>
             <Header />
             <h2>Welcome to the Bookcase App</h2>
-            <Search keyword={keyword} setKeyword={setKeyword} />
+            <Search keyword={keyword} setKeyword={setKeyword} findBooks={findBooks}/>
             {books.map((book) => <BookList key={book.id} book={book} handleClick={addBook} />)}
             {/* <BookList book={books} /> */}
           </>
   }
 
   function BookCase() {
-    const [books] = useState(data);
     // console.log("This", books)
     return <>
             <Header />

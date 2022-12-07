@@ -22,12 +22,14 @@ function Book({book}) {
   const { description  } = book.book.volumeInfo;
   // console.log(book)
   return (
-    <div style={{padding:'50px 20px', backgroundColor:"pink", margin:"5px"}}>
-      <h3>{title}</h3>
-      <img src={thumbnail} alt={title}></img>
-      <p>{description}</p>
+    <div style={{ padding:'40px 20px', backgroundColor:"pink", margin:"5px", borderRadius:"5px"}}>
+      <h3 style={{textAlign:"left", fontSize:"30px"}}>{title}</h3>
+      <div style={{display:"flex"}}>
+        <img style={{width:"120px", height:"170px", marginTop:"16px"}} src={thumbnail} alt={title}></img>
+        <p style={{paddingLeft:"35px", paddingRight:"10px"}}>{description}</p>
+      </div>
       {retailPrice && retailPrice.amount < 3 ? "Great deal" : "Best Seller"}
-      <button style={{padding:"5px", margin:"5px", borderRadius:"5px", border:"none"}} onClick={() => book.handleClick(title)}>Add +</button>
+      <button style={{padding:"8px", margin:"1% 1% 1% 80%", borderRadius:"5px", border:"none", backgroundColor:"#6CB4EE"}} onClick={() => book.handleClick(title)}>Add +</button>
     </div>
   );
 }
